@@ -1,0 +1,25 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\.tools\\node;${workspaceFolder};${env:PATH}"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass"
+      ]
+    }
+  },
+  "remote.portsAttributes": {
+    "3000": {
+      "onAutoForward": "openPreview"
+    }
+  },
+  "workbench.externalUriOpeners": {
+    "localhost:*": "simpleBrowser.open",
+    "127.0.0.1:*": "simpleBrowser.open",
+    "localhost": "simpleBrowser.open",
+    "127.0.0.1": "simpleBrowser.open"
+  }
+}
