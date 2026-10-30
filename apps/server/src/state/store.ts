@@ -407,3 +407,4 @@ export class StateStore extends EventEmitter {
     this.emit('change', this.data);
   }
 }
+

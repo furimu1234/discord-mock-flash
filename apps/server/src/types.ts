@@ -127,3 +127,4 @@ export interface MockStateData {
   botStreamingVoice: boolean; // BotがVCで音声を流しているかどうか
   voiceStreamingChannelId: string | null; // Botが音声ストリーミングしているチャンネルID
 }
+

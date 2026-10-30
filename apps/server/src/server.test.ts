@@ -106,4 +106,17 @@ describe('Discord Mock Server & State Store', () => {
     const afterStates = store.getState().voiceStates.filter((vs: any) => vs.channel_id === vcChannel.id);
     expect(afterStates.length).toBe(1);
   });
+
+  it('serves Web UI with right sidebar containing members and test cases tabs', async () => {
+    const res = await fetch(`http://127.0.0.1:${TEST_PORT}/`);
+    expect(res.status).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('id="rightSidebar"');
+    expect(html).toContain('id="tabMembers"');
+    expect(html).toContain('id="tabTestCases"');
+    expect(html).toContain('id="panelMembers"');
+    expect(html).toContain('id="panelTestCases"');
+    expect(html).toContain('id="btnRunAllTests"');
+  });
 });
+

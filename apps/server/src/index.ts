@@ -91,3 +91,4 @@ export function startDiscordMockServer(options: ServerOptions = {}) {
 if (process.argv[1] && process.argv[1].endsWith('index.ts') || process.argv[1]?.endsWith('index.js')) {
   startDiscordMockServer();
 }
+

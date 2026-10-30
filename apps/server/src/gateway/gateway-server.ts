@@ -247,3 +247,4 @@ export class GatewayServer {
     return { id, token };
   }
 }
+

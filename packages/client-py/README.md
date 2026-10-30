@@ -12,3 +12,4 @@ async def test_bot_interaction():
         user = await mock.create_user(username="Alice")
         await mock.as_user(user).send_message(channel_id="...", content="Hello")
 ```
+
