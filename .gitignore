@@ -188,3 +188,22 @@ htmlcov/
 # Local Mock State Data (Ignore persistent test runtime data)
 data/
 *.state.json
+
+# Project-local Portable Tools
+.tools/
+
+# Project-local CLI Wrappers
+/node.cmd
+/npm.cmd
+/npx.cmd
+/corepack.cmd
+/pnpm.cmd
+/activate.ps1
+/pnpm
+/pnpm.*
+/pnpx
+/pnpx.*
+/yarn
+/yarn.*
+/yarnpkg
+/yarnpkg.*
