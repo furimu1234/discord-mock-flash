@@ -1,0 +1,34 @@
+name: Test JavaScript / TypeScript Packages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/client-js/**'
+      - 'apps/server/**'
+      - 'spec/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/test-js.yml'
+  pull_request:
+    paths:
+      - 'packages/client-js/**'
+      - 'apps/server/**'
+      - 'spec/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/test-js.yml'
+
+jobs:
+  test-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @discord-mock/client run test
+      - run: pnpm --filter @discord-mock/server run test

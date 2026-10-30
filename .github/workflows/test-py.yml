@@ -1,0 +1,31 @@
+name: Test Python Package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/client-py/**'
+      - 'spec/**'
+      - '.github/workflows/test-py.yml'
+  pull_request:
+    paths:
+      - 'packages/client-py/**'
+      - 'spec/**'
+      - '.github/workflows/test-py.yml'
+
+jobs:
+  test-py:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - working-directory: packages/client-py
+        run: |
+          uv sync --all-extras --dev
+          uv run ruff check .
+          uv run pytest
