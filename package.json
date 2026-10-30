@@ -4,14 +4,13 @@
   "private": true,
   "description": "Standalone Discord Mock System for Automated Bot Testing",
   "scripts": {
-    "dev": "pnpm --parallel dev",
+    "start": "pnpm --filter @discord-mock/server start",
+    "dev": "pnpm --filter @discord-mock/server dev",
     "build": "pnpm -r build",
-    "test": "pnpm -r test",
-    "lint": "pnpm -r lint"
+    "test": "pnpm -r test"
   },
   "packageManager": "pnpm@9.12.0",
   "engines": {
     "node": ">=18.0.0"
   }
 }
-
