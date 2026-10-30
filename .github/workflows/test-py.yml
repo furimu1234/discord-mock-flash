@@ -29,3 +29,4 @@ jobs:
           uv sync --all-extras --dev
           uv run ruff check .
           uv run pytest
+

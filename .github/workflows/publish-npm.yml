@@ -23,3 +23,4 @@ jobs:
       - run: pnpm --filter @discord-mock/client run build
       - working-directory: packages/client-js
         run: pnpm publish --provenance --access public
+

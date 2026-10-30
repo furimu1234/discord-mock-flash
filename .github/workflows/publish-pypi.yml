@@ -28,3 +28,4 @@ jobs:
         uses: pypa/gh-action-pypa-publish@release/v1
         with:
           packages-dir: packages/client-py/dist/
+
